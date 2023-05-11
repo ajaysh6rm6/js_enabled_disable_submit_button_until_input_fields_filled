@@ -4,7 +4,7 @@
 
 const inputFields = document.querySelectorAll('.techpy_check_input_field');
 const submitBtn = document.querySelector('button[type="submit"]');
-
+submitBtn.disabled = true;
 
 // Attach event listener to a parent element using event delegation
 document.addEventListener('input', checkInputs);
