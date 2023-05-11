@@ -1,0 +1,23 @@
+//<input type="text" class="form-control techpy_check_input_field" name="login-username" placeholder="username" tabindex="1" autofocus required />
+//<input type="password" class="form-control form-control-merge techpy_check_input_field" name="login-password" tabindex="2" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required/>
+//<button type="submit" class="btn btn-primary w-50" tabindex="3">Sign in</button>
+
+const inputFields = document.querySelectorAll('.techpy_check_input_field');
+const submitBtn = document.querySelector('button[type="submit"]');
+
+
+// Attach event listener to a parent element using event delegation
+document.addEventListener('input', checkInputs);
+
+function checkInputs() {
+let allFilled = true;
+
+for (let i = 0, len = inputFields.length; i < len; i++) {
+    if (inputFields[i].value === '') {
+    allFilled = false;
+    break;
+    }
+}
+
+submitBtn.disabled = !allFilled;
+}
